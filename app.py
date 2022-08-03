@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///urls.db'
 db = SQLAlchemy(app)
 
-base_url = 'http://127.0.0.1:5000/'
+base_url = 'https://shorteningurls.herokuapp.com/'
 
 class URLDB(db.Model):
     id = db.Column(db.Integer, primary_key=True)
