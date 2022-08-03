@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>URLS</title>
+<hr>
+{% endblock %}
+
+{% block body %} 
+    <h1>PREVIOUS URLS</h1>
+
+    {% for url in urls %}
+
+        <p style="white-space:pre-wrap" ></p>
+        
+        <a href="{{ url.long_url }}"><p style="white-space:pre-wrap" >{{ url.short_url }}</p></a>
+
+    {% endfor %}
+
+{% endblock %}

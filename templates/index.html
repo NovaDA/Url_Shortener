@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Home</title>
+{% endblock %}
+
+{% block body %} 
+<br>
+<br>
+<div>
+    <div class="bg-light p-5 rounded">
+      <div class="col-sm-8 mx-auto">
+        <h1>URL SHORTENER</h1>
+        <p>This is my short url project</p>
+        <p>Ainsert the long version of the url you want to shorten</p>
+        <!-- <p><a class="btn btn-primary" href="/posts" role="button">go to posts &raquo;</a></p> -->
+        <hr>
+    <h2>New URL:</h2>
+    <form action='/url' method='POST'>
+        <label for="URL">Url to shorten:</label>
+        <input class="form-control" type="text" name='URL' id='URL' placeholder="Enter Url" aria-label="Enter Url" />
+        <input type='submit' value='Post'>
+    </form>
+    {% if last_url %}
+    <div>
+        <a href="{{ last_url.long_url }}"><p style="white-space:pre-wrap" >{{ last_url.short_url }}</p></a>
+    </div>
+    {% endif%}
+    <br>
+    <br>
+    <form action='/url' method='GET'>
+        <label for="URL">Get Short Urls History:</label>
+        <br>
+        <input type='submit' value='Get'>
+    </form>
+<hr>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
