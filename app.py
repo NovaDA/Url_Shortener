@@ -17,7 +17,7 @@ class URLDB(db.Model):
         return 'Url ' + str(self.id)
 
 
-@app.route('/')
+@app.route('base_url')
 def index():
     return render_template('index.html')
 
